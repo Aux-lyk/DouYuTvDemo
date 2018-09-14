@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_recommend"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="推荐"/>
+    <item android:id="@+id/menu_entertainment"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="娱乐"/>
+    <item android:id="@+id/menu_focus"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="关注"/>
+    <item android:id="@+id/menu_postBar"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="鱼吧"/>
+
+</menu>
