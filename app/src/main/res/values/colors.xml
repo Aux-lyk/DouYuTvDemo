@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#fff</color>
-    <color name="commonText">#666</color>
+    <color name="commonText">#3c3c3c</color>
     <color name="orange">#FFA500</color>
+    <color name="mainOrange">#F70</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>

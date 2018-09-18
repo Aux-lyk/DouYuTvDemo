@@ -9,13 +9,14 @@
 
     <ImageView
         android:id="@+id/tab_bar_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:padding="5dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"/>
     <TextView
         android:id="@+id/tab_bar_text"
         android:padding="2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/commonText"/>
+        android:textColor="@color/nav_color_select"/>
 
 </LinearLayout>

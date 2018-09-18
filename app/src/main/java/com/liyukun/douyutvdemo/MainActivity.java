@@ -1,5 +1,6 @@
 package com.liyukun.douyutvdemo;
 
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,15 +9,30 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import com.liyukun.douyutvdemo.contentFragment.FragmentBar;
+import com.liyukun.douyutvdemo.contentFragment.FragmentCommend;
+import com.liyukun.douyutvdemo.contentFragment.FragmentDiscover;
+import com.liyukun.douyutvdemo.contentFragment.FragmentEntertainment;
+import com.liyukun.douyutvdemo.contentFragment.FragmentFocus;
+
 public class MainActivity extends AppCompatActivity {
     private FragmentTabHost fragmentTabHost;
+    private Fragment mFragmentTab;
+    //定义数组来存放Fragment界面
+    private Class fragmentArray[] = {
+            FragmentCommend.class,
+            FragmentEntertainment.class,
+            FragmentFocus.class,
+            FragmentBar.class,
+            FragmentDiscover.class,
+    };
     // 图片
     private int imageButton[] = {
-            R.drawable.ic_launcher_foreground,
-            R.drawable.ic_launcher_foreground,
-            R.drawable.ic_launcher_foreground,
-            R.drawable.ic_launcher_foreground,
-            R.drawable.ic_launcher_foreground
+            R.drawable.tab_recommend_btn,
+            R.drawable.tab_recommend_btn,
+            R.drawable.tab_recommend_btn,
+            R.drawable.tab_recommend_btn,
+            R.drawable.tab_recommend_btn
     };
     // 标题
     private String texts[] = {"推荐","娱乐","关注","鱼吧","发现"};
@@ -26,16 +42,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        // 创建和获取Fragment实例
+//        mFragmentTab = new FragmentTab();
+//        // 获取到FragmentManager对象
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        // 开启一个事务
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        // 添加Fragment
+//        fragmentTransaction.add(R.id.main_content, mFragmentTab);
+//        // 提交事务
+//        fragmentTransaction.commit();
+
         // 实例化tabhost
         fragmentTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
-        fragmentTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
+        fragmentTabHost.setup(this, getSupportFragmentManager(), R.id.main_content);
 //        fragmentTabHost.getTabWidget().setDividerDrawable(null); // 去掉分割线
 
         for (int i = 0; i < texts.length; i++) {
             // Tab按钮添加文字和图片
             TabHost.TabSpec tabSpec = fragmentTabHost.newTabSpec(texts[i]).setIndicator(getImageView(i));
             // 添加Fragment
-            fragmentTabHost.addTab(tabSpec, FragmentTab.class, null);
+            fragmentTabHost.addTab(tabSpec, fragmentArray[i], null);
             // 设置Tab按钮的背景(必须在addTab之后，由于需要子节点（底部菜单按钮）否则会出现空指针异常)
             fragmentTabHost.getTabWidget().getChildAt(i).setBackgroundResource(R.color.white);
         }
