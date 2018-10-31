@@ -9,11 +9,11 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-import com.liyukun.douyutvdemo.contentFragment.FragmentBar;
-import com.liyukun.douyutvdemo.contentFragment.FragmentCommend;
-import com.liyukun.douyutvdemo.contentFragment.FragmentDiscover;
-import com.liyukun.douyutvdemo.contentFragment.FragmentEntertainment;
-import com.liyukun.douyutvdemo.contentFragment.FragmentFocus;
+import com.liyukun.douyutvdemo.view.fishBar.FragmentBar;
+import com.liyukun.douyutvdemo.recommend.FragmentCommend;
+import com.liyukun.douyutvdemo.view.discover.FragmentDiscover;
+import com.liyukun.douyutvdemo.entertainment.FragmentEntertainment;
+import com.liyukun.douyutvdemo.focus.FragmentFocus;
 
 public class MainActivity extends AppCompatActivity {
     private FragmentTabHost fragmentTabHost;
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             FragmentDiscover.class,
     };
     // 图片
-    private int imageButton[] = {
+    private int[] imageButton = {
             R.drawable.tab_recommend_btn,
             R.drawable.tab_recommend_btn,
             R.drawable.tab_recommend_btn,
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.tab_recommend_btn
     };
     // 标题
-    private String texts[] = {"推荐","娱乐","关注","鱼吧","发现"};
+    private String[] texts = {"推荐","娱乐","关注","鱼吧","发现"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

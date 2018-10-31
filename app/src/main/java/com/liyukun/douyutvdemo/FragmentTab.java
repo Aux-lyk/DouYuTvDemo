@@ -6,10 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 public class FragmentTab extends Fragment {
-    private TextView mShowText;
     private View mViewContent; // 缓存视图内容
 
     @Nullable @Override
@@ -24,19 +22,6 @@ public class FragmentTab extends Fragment {
             parent.removeView(mViewContent);
         }
 
-//        ButterKnife.bind(this, mViewContent);
         return mViewContent;
     }
-
-    @Override public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        // 显示Fragment的Tag信息
-        mShowText = (TextView) mViewContent.findViewById(R.id.tab_show_text);
-        mShowText.setText(String.valueOf("Page: " + getTag()));
-    }
-
-//    @Override public void onDestroyView() {
-//        super.onDestroyView();
-////        ButterKnife.unbind(this);
-//    }
 }
